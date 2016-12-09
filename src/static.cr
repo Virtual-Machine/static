@@ -3,10 +3,19 @@ require "yaml"
 require "kemal"
 
 class Config
-  @@title = "Blog Title"
+  @@config = YAML.parse File.read("./config.yml")
 
   def self.title
-    @@title
+    @@config["title"]
+  end
+
+  def self.description
+    @@config["description"]
+  end
+
+  def self.port
+    port = @@config["port"].as_s
+    port.to_i
   end
 end
 
@@ -38,7 +47,6 @@ def post_item(file)
   post = {} of String => String
   contents = ""
   Posts.posts.each do |_post|
-    puts _post
     _post = _post.as_h.as(Hash)
     if _post.has_key? "file"
       if (_post["file"].as(String)).ends_with?("#{file}.md")
@@ -58,5 +66,5 @@ module Static
   get "/post/:post" do |env|
     post_item(env.params.url["post"])
   end
-  Kemal.run
+  Kemal.run Config.port
 end
