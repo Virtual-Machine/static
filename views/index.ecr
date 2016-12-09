@@ -10,14 +10,12 @@
   <body>
     <main>
       <header>
-        <h1><%= Config.title %> <small>A Description</small></h1>
+        <h1><%= Config.title %> <small><%= Config.description %></small></h1>
       </header>
       <% Posts.posts.each do |post| %>
         <% post = post.as_h %>
         <% if post["type"] == "post" %>
           <%= render "views/types/post.ecr" %>
-        <% elsif post["type"] == "tweet" %>
-          <%= render "views/types/tweet.ecr" %>
         <% elsif post["type"] == "video" %>
           <%= render "views/types/video.ecr" %>
         <% elsif post["type"] == "gist" %>
@@ -27,7 +25,6 @@
         <% end %>
       <% end %>
       <footer>
-        <small>Powered by <a href="http://github.com/sdogruyol/kemal">kemal</a> and <a href="http://github.com/virtual-machine/static">static</a></small>
       </footer>
     </main>
   </body>
