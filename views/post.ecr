@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style/main.css" media="screen" charset="utf-8">
+    <title><%= post["title"] %></title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="back" href="/">&larr; Test String</a>
+        <h1><%= post["title"] %></h1>
+        <div class="meta">
+          <small><%= post["date"] %> by <%= post["writer"] %></small>
+        </div>
+      </header>
+      <article class="contents">
+        <%= Markdown.to_html contents %>
+        <% if post["disqus"] == "true" %>
+          <!-- Proper disqus thread -->
+        <% end %>
+      </article>
+    </main>
+  </body>
+</html>

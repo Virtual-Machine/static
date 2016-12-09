@@ -1,0 +1,11 @@
+name: static-blog
+version: 0.1.0
+
+dependencies:
+  kemal:
+    github: sdogruyol/kemal
+
+authors:
+  - Virtual-Machine
+
+license: MIT

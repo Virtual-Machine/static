@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style/main.css" media="screen" charset="utf-8">
+    <title>A Title Only A Mother Could Love</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>A Title Only A Mother Could Love <small>A Description</small></h1>
+      </header>
+      <% Posts.posts.each do |post| %>
+        <% post = post.as_h %>
+        <% if post["type"] == "post" %>
+          <%= render "views/types/post.ecr" %>
+        <% elsif post["type"] == "tweet" %>
+          <%= render "views/types/tweet.ecr" %>
+        <% elsif post["type"] == "video" %>
+          <%= render "views/types/video.ecr" %>
+        <% elsif post["type"] == "gist" %>
+          <%= render "views/types/gist.ecr" %>
+        <% elsif post["type"] == "link" %>
+          <%= render "views/types/link.ecr" %>
+        <% end %>
+      <% end %>
+      <footer>
+        <small>Powered by <a href="http://github.com/sdogruyol/kemal">kemal</a> and <a href="http://github.com/f/kamber">kamber</a></small>
+      </footer>
+    </main>
+  </body>
+</html>
