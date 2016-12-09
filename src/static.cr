@@ -2,6 +2,14 @@ require "markdown"
 require "yaml"
 require "kemal"
 
+class Config
+  @@title = "Blog Title"
+
+  def self.title
+    @@title
+  end
+end
+
 class Posts
   @@posts = YAML.parse File.read("./posts/posts.yml")
 
@@ -11,11 +19,11 @@ class Posts
 end
 
 def theme_style(path)
-  "css/#{path}"
+  "/css/#{path}"
 end
 
 def theme_script(path)
-  "js/#{path}"
+  "/js/#{path}"
 end
 
 def theme_item(post, contents)
@@ -42,22 +50,13 @@ def post_item(file)
   theme_item(post, contents)
 end
 
-module Kamber
+module Static
   get "/" do
     theme_index
   end
-  get "/style/:path" do |env|
-    env.response.content_type = "text/css"
-    File.read theme_style(env.params.query["path"])
-  end
 
-  get "/script/:path" do |env|
-    env.response.content_type = "application/javascript"
-    File.read theme_script(env.params.query["path"])
-  end
-
-  get "/:post" do |env|
-    post_item(env.params.query["post"])
+  get "/post/:post" do |env|
+    post_item(env.params.url["post"])
   end
   Kemal.run
 end

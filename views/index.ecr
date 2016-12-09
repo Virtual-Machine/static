@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style/main.css" media="screen" charset="utf-8">
-    <title>A Title Only A Mother Could Love</title>
+    <link rel="stylesheet" href="/css/main.css" media="screen" charset="utf-8">
+    <title><%= Config.title %></title>
   </head>
   <body>
     <main>
       <header>
-        <h1>A Title Only A Mother Could Love <small>A Description</small></h1>
+        <h1><%= Config.title %> <small>A Description</small></h1>
       </header>
       <% Posts.posts.each do |post| %>
         <% post = post.as_h %>
@@ -27,7 +27,7 @@
         <% end %>
       <% end %>
       <footer>
-        <small>Powered by <a href="http://github.com/sdogruyol/kemal">kemal</a> and <a href="http://github.com/f/kamber">kamber</a></small>
+        <small>Powered by <a href="http://github.com/sdogruyol/kemal">kemal</a> and <a href="http://github.com/virtual-machine/static">static</a></small>
       </footer>
     </main>
   </body>

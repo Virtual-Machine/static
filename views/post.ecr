@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style/main.css" media="screen" charset="utf-8">
-    <title><%= post["title"] %></title>
+    <link rel="stylesheet" href="/css/main.css" media="screen" charset="utf-8">
+    <title><%= Config.title %> | <%= post["title"] %></title>
   </head>
   <body>
     <main>
       <header>
-        <a class="back" href="/">&larr; Test String</a>
+        <a class="back" href="/">&larr; <%= Config.title %></a>
         <h1><%= post["title"] %></h1>
         <div class="meta">
           <small><%= post["date"] %> by <%= post["writer"] %></small>
