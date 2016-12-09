@@ -17,7 +17,7 @@ Static is a hard fork of [Kamber](http://github.com/f/kamber), a crystal bloggin
 
 ## Getting Started
 
-### 1. Install Crystal and Kamber
+### 1. Install Crystal and Static
 ```
 brew install crystal-lang
 git clone https://github.com/virtual-machine/static myblog
@@ -39,7 +39,7 @@ crystal build --release src/static.cr
 To run in production, add `-e production` flag.
 
 ```
-./kamber -e production
+./static -e production
 ```
 
 ## Post Types
@@ -66,7 +66,7 @@ url: "http://crystal-lang.org"
 
 ### Video
 
-Kamber supports **Youtube** and **Vimeo** videos. The main pattern of `video` is
+Static supports **Youtube** and **Vimeo** videos. The main pattern of `video` is
 `[video provider]/[video id]`
 
 ```yml
