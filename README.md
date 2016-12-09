@@ -106,4 +106,4 @@ gist: f/c12af6b9e7d53bd9224d
 ## Contributors
 
 - [f](https://github.com/f) Fatih Kadir Akın - original designer of Kamber
-- [f](https://github.com/virtual-machine) Virtual-Machine
+- [Virtual-Machine](https://github.com/virtual-machine) Virtual-Machine
