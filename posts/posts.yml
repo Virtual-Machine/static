@@ -1,18 +1,10 @@
 - type: post
   title: Example Post
   abstract: Lorem ipsum dolor sit amet, consectetur adipisicing elit
-  file: posts/2015-10-10-example-post.md
+  file: posts/2016-12-09-example-post.md
   disqus: true
-  date: 10 Jan 2014
-  writer: Fatih Kadir Akın
-
-- type: post
-  title: Categorized Post
-  abstract: Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  file: posts/category/subcategory/another-post.md
-  disqus: true
-  date: 14 Jan 2014
-  writer: Fatih Kadir Akın
+  date: December 9th, 2016
+  writer: Virtual-Machine
 
 - type: link
   title: Example Link
@@ -22,15 +14,6 @@
   title: Example Video
   abstract:
   video: youtube/YE3GkCB3t_0
-
-- type: video
-  title: Example Video 2
-  abstract:
-  video: vimeo/147842467
-
-- type: tweet
-  title: Example Tweet
-  tweet: fkadev/673506301415194625
 
 - type: gist
   title: Example Gist
