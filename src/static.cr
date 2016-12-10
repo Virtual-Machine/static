@@ -58,13 +58,42 @@ def post_item(file)
   theme_item(post, contents)
 end
 
+def generateIndex : Nil
+  index = render "views/index.ecr"
+  File.write("build/index.html", index)
+end
+
+def generatePosts : Nil
+  post = {} of String => String
+  contents = ""
+  Posts.posts.each do |_post|
+    _post = _post.as_h.as(Hash)
+    if _post.has_key? "file"
+      post = _post
+      contents = File.read(_post["file"].as(String))
+      name = /posts\/(.*)\.md/.match(_post["file"].as(String)).try &.[1]
+      if name.not_nil!
+        postRender = render "views/post.ecr"
+        File.write("build/post/#{name}.html", postRender)
+      end
+    end
+  end
+end
+
 module Static
+  if ARGV.size > 0 && ARGV[0] == "generate"
+    puts "Generating..."
+    generateIndex
+    generatePosts
+  end
+
   get "/" do
     theme_index
   end
 
   get "/post/:post" do |env|
-    post_item(env.params.url["post"])
+    item = env.params.url["post"].sub ".html", ""
+    post_item(item)
   end
   Kemal.run Config.port
 end
