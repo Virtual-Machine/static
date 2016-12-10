@@ -1,6 +1,6 @@
 /doc/
 /lib/
 /.shards/
-static
+/static
 build/
 .DS_Store
