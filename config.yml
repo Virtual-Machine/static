@@ -1,3 +1,4 @@
 title: A blog title
 description: A blog description
 port: 8000
+auto_gen_startup: true

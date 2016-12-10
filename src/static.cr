@@ -3,19 +3,29 @@ require "yaml"
 require "kemal"
 
 class Config
-  @@config = YAML.parse File.read("./config.yml")
+  YAML.mapping(
+    title: String,
+    description: String,
+    port: Int32,
+    auto_gen_startup: Bool,
+  )
 
-  def self.title
-    @@config["title"]
+  @@config = Config.from_yaml File.read "config.yml"
+
+  def self.generate
+    @@config.auto_gen_startup
   end
 
   def self.description
-    @@config["description"]
+    @@config.description
   end
 
   def self.port
-    port = @@config["port"].as_s
-    port.to_i
+    @@config.port
+  end
+
+  def self.title
+    @@config.title
   end
 end
 
@@ -90,7 +100,7 @@ def removeOldPosts : Nil
 end
 
 module Static
-  if ARGV.size > 0 && ARGV[0] == "generate"
+  if Config.generate || (ARGV.size > 0 && ARGV[0] == "generate")
     puts "Generating..."
     removeOldPosts
     generateIndex
