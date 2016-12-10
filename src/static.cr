@@ -80,9 +80,19 @@ def generatePosts : Nil
   end
 end
 
+def removeOldPosts : Nil
+  postDir = Dir.open("build/post")
+  postDir.each do |postFile|
+    if postFile.index(".html")
+      File.delete("build/post/#{postFile}")
+    end 
+  end
+end
+
 module Static
   if ARGV.size > 0 && ARGV[0] == "generate"
     puts "Generating..."
+    removeOldPosts
     generateIndex
     generatePosts
   end
