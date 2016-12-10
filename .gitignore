@@ -2,5 +2,5 @@
 /lib/
 /.shards/
 static
-
+build/
 .DS_Store
