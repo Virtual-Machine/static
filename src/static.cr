@@ -3,14 +3,6 @@ require "yaml"
 require "kemal"
 require "./static/*"
 
-class Posts
-  @@posts = YAML.parse File.read("./posts/posts.yml")
-
-  def self.posts
-    @@posts
-  end
-end
-
 def theme_style(path)
   "/css/#{path}"
 end
