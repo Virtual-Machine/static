@@ -3,22 +3,6 @@ require "yaml"
 require "kemal"
 require "./static/*"
 
-def theme_style(path)
-  "/css/#{path}"
-end
-
-def theme_script(path)
-  "/js/#{path}"
-end
-
-def theme_item(post, contents)
-  render "views/post.ecr"
-end
-
-def theme_index
-  render "views/index.ecr"
-end
-
 def post_item(file)
   post = {} of String => String
   contents = ""
@@ -31,7 +15,7 @@ def post_item(file)
       end
     end
   end
-  theme_item(post, contents)
+  render "views/post.ecr"
 end
 
 def generateIndex : Nil
@@ -74,7 +58,7 @@ module Static
   end
 
   get "/" do
-    theme_index
+    render "views/index.ecr"
   end
 
   get "/post/:post" do |env|
