@@ -512,11 +512,8 @@ article {
 }
 
 article header h2 a:hover {
-  background-image: linear-gradient(rgba(141, 179, 89, 0.25) 0%, #303030 100%);
-  background-repeat: repeat-x;
-  background-size: 1px 1px;
-  background-position: 0 90%;
-  text-shadow: 3px 0 white, 2px 0 white, 1px 0 white, -1px 0 white, -2px 0 white, -3px 0 white;
+  color: #339;
+  text-decoration: underline;
 }
 
 .back {
