@@ -1,5 +1,5 @@
-title: A blog title
-description: A blog description
+title: Example Blog
+description: A Blog Demonstration
 port: 8000
 auto_gen_startup: true
 disqus_shortname: static-crystal

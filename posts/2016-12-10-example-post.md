@@ -9,14 +9,16 @@ look like:
   * that one
   * the other one
 
-Javascript
+> example.js
+
 ```javascript
 function hello() {
   return true;
 }
 ```
 
-Crystal
+> example.cr
+
 ```ruby
 class Speaker
     def hello : String
@@ -25,7 +27,8 @@ class Speaker
 end
 ```
 
-Ruby
+> example.rb
+
 ```ruby
 class Speaker
     def hello
@@ -34,13 +37,15 @@ class Speaker
 end
 ```
 
-HTML
+> example.html
+
 ```html
 <div><p>Hello</p></div>
 
 ```
 
-CSS
+> example.css
+
 ```css
 .hello {
     width: 20px;
@@ -49,7 +54,8 @@ CSS
 
 ```
 
-Golang
+> example.go
+
 ```go
 func hello(){
     fmt.Println("Hello")

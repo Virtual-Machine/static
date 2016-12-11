@@ -5,7 +5,7 @@
 <% content_for "body_content" do %>
   <main>
     <header>
-      <h1><%= Config.title %> <small><%= Config.description %></small></h1>
+      <h1><%= Config.title %> | <small><%= Config.description %></small></h1>
     </header>
     <% Posts.posts.each do |post| %>
       <% post = post.as_h %>
