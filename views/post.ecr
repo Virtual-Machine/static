@@ -15,7 +15,7 @@
     <article class="contents">
       <%= Markdown.to_html contents %>
       <% if Posts.active["disqus"] == "true" %>
-        <!-- Proper disqus thread -->
+        <div id="disqus_thread" data-shortname="<%= Config.disqus_shortname %>"></div>
       <% end %>
     </article>
   </main>

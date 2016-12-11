@@ -5,6 +5,7 @@ module Static
       description: String,
       port: Int32,
       auto_gen_startup: Bool,
+      disqus_shortname: String,
     )
 
     @@config = Config.from_yaml File.read "config.yml"
@@ -23,6 +24,10 @@ module Static
 
     def self.title
       @@config.title
+    end
+
+    def self.disqus_shortname
+      @@config.disqus_shortname
     end
   end
 end
