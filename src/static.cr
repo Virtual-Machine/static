@@ -14,7 +14,7 @@ module Static
   end
 
   get "/" do
-    render "views/index.ecr"
+    render "views/index.ecr", "views/layout/layout.ecr"
   end
 
   get "/post/:post" do |env|

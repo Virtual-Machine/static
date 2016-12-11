@@ -1,22 +1,24 @@
-<% view = "post" %>
-<%= render "views/layout/header.ecr" %>
-  <body>
-    <main>
-      <header>
-        <a class="back" href="/">&larr; <%= Config.title %></a>
-        <h1><%= Posts.active["title"] %></h1>
-        <div class="meta">
-          <small><%= Posts.active["date"] %> by <%= Posts.active["writer"] %></small>
-        </div>
-      </header>
-      <article class="contents">
-        <%= Markdown.to_html contents %>
-        <% if Posts.active["disqus"] == "true" %>
-          <!-- Proper disqus thread -->
-        <% end %>
-      </article>
-    </main>
-    <script src="/js/highlight.pack.js"></script>
-    <script src="/js/main.js"></script>
-  </body>
-</html>
+<% content_for "header_content" do %>
+  <link rel="stylesheet" href="/css/atom-one-dark.css">
+  <title><%= Config.title %> | <%= Posts.active["title"] %></title>
+<% end %>
+
+<% content_for "body_content" do %>
+  <main>
+    <header>
+      <a class="back" href="/">&larr; <%= Config.title %></a>
+      <h1><%= Posts.active["title"] %></h1>
+      <div class="meta">
+        <small><%= Posts.active["date"] %> by <%= Posts.active["writer"] %></small>
+      </div>
+    </header>
+    <article class="contents">
+      <%= Markdown.to_html contents %>
+      <% if Posts.active["disqus"] == "true" %>
+        <!-- Proper disqus thread -->
+      <% end %>
+    </article>
+  </main>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/main.js"></script>
+<% end %>

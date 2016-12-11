@@ -1,24 +1,25 @@
-<% view = "index" %>
-<%= render "views/layout/header.ecr" %>
-  <body>
-    <main>
-      <header>
-        <h1><%= Config.title %> <small><%= Config.description %></small></h1>
-      </header>
-      <% Posts.posts.each do |post| %>
-        <% post = post.as_h %>
-        <% if post["type"] == "post" %>
-          <%= render "views/types/post.ecr" %>
-        <% elsif post["type"] == "video" %>
-          <%= render "views/types/video.ecr" %>
-        <% elsif post["type"] == "gist" %>
-          <%= render "views/types/gist.ecr" %>
-        <% elsif post["type"] == "link" %>
-          <%= render "views/types/link.ecr" %>
-        <% end %>
+<% content_for "header_content" do %>
+  <title><%= Config.title %></title>
+<% end %>
+
+<% content_for "body_content" do %>
+  <main>
+    <header>
+      <h1><%= Config.title %> <small><%= Config.description %></small></h1>
+    </header>
+    <% Posts.posts.each do |post| %>
+      <% post = post.as_h %>
+      <% if post["type"] == "post" %>
+        <%= render "views/types/post.ecr" %>
+      <% elsif post["type"] == "video" %>
+        <%= render "views/types/video.ecr" %>
+      <% elsif post["type"] == "gist" %>
+        <%= render "views/types/gist.ecr" %>
+      <% elsif post["type"] == "link" %>
+        <%= render "views/types/link.ecr" %>
       <% end %>
-      <footer>
-      </footer>
-    </main>
-  </body>
-</html>
+    <% end %>
+    <footer>
+    </footer>
+  </main>
+<% end %>

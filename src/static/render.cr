@@ -11,11 +11,11 @@ module Static
 	      end
 	    end
 	  end
-	  render "views/post.ecr"
+	  render "views/post.ecr", "views/layout/layout.ecr"
 	end
 
 	def generateIndex : Nil
-	  index = render "views/index.ecr"
+	  index = render "views/index.ecr", "views/layout/layout.ecr"
 	  File.write("build/index.html", index)
 	end
 
@@ -29,7 +29,7 @@ module Static
 	      contents = File.read(_post["file"].as(String))
 	      name = /posts\/(.*)\.md/.match(_post["file"].as(String)).try &.[1]
 	      if name.not_nil!
-	        postRender = render "views/post.ecr"
+	        postRender = render "views/post.ecr", "views/layout/layout.ecr"
 	        File.write("build/post/#{name}.html", postRender)
 	      end
 	    end
