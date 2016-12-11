@@ -6,6 +6,14 @@
   date: December 9th, 2016
   writer: Virtual-Machine
 
+- type: post
+  title: Example Post 2
+  abstract: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+  file: posts/2016-12-10-example-post.md
+  disqus: true
+  date: December 10th, 2016
+  writer: Virtual-Machine
+
 - type: link
   title: Example Link
   url: "http://crystal-lang.org"
