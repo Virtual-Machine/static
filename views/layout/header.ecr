@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/main.css" media="screen" charset="utf-8">
+    <% if view == "index" %>
+	  <title><%= Config.title %></title>
+    <% elsif view == "post" %>
+	  <link rel="stylesheet" href="/css/atom-one-dark.css">
+	  <title><%= Config.title %> | <%= Posts.active["title"] %></title>
+    <% end %>
+  </head>

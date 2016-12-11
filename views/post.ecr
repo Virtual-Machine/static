@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/main.css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="/css/atom-one-dark.css">
-    <title><%= Config.title %> | <%= post["title"] %></title>
-  </head>
+<% view = "post" %>
+<%= render "views/layout/header.ecr" %>
   <body>
     <main>
       <header>
         <a class="back" href="/">&larr; <%= Config.title %></a>
-        <h1><%= post["title"] %></h1>
+        <h1><%= Posts.active["title"] %></h1>
         <div class="meta">
-          <small><%= post["date"] %> by <%= post["writer"] %></small>
+          <small><%= Posts.active["date"] %> by <%= Posts.active["writer"] %></small>
         </div>
       </header>
       <article class="contents">
         <%= Markdown.to_html contents %>
-        <% if post["disqus"] == "true" %>
+        <% if Posts.active["disqus"] == "true" %>
           <!-- Proper disqus thread -->
         <% end %>
       </article>

@@ -6,7 +6,7 @@ module Static
 	    _post = _post.as_h.as(Hash)
 	    if _post.has_key? "file"
 	      if (_post["file"].as(String)).ends_with?("#{file}.md")
-	        post = _post
+	        Posts.setActive _post
 	        contents = File.read(_post["file"].as(String))
 	      end
 	    end
@@ -25,7 +25,7 @@ module Static
 	  Posts.posts.each do |_post|
 	    _post = _post.as_h.as(Hash)
 	    if _post.has_key? "file"
-	      post = _post
+	      Posts.setActive _post
 	      contents = File.read(_post["file"].as(String))
 	      name = /posts\/(.*)\.md/.match(_post["file"].as(String)).try &.[1]
 	      if name.not_nil!
