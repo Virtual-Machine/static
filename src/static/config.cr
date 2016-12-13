@@ -7,6 +7,7 @@ module Static
       auto_gen_startup: Bool,
       disqus_shortname: String,
       logo: String,
+      root: String,
     )
 
     @@config = Config.from_yaml File.read "config.yml"
@@ -33,6 +34,14 @@ module Static
 
     def self.logo
       @@config.logo
+    end
+
+    def self.root
+      @@config.root
+    end
+
+    def self.set_root(root : String)
+      @@config.root = root
     end
   end
 end

@@ -6,7 +6,7 @@
 <% content_for "body_content" do %>
   <main>
     <header>
-      <a class="back" href="/">&larr; <%= Config.title %></a>
+      <a class="back" href="<%= Config.root %>">&larr; <%= Config.title %></a>
       <h1><%= Posts.active["title"] %></h1>
       <div class="meta">
         <small><%= Posts.active["date"] %> by <%= Posts.active["writer"] %></small>

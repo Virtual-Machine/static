@@ -11,15 +11,18 @@ module Static
 	      end
 	    end
 	  end
+	  root = "/"
 	  render "views/post.ecr", "views/layout/layout.ecr"
 	end
 
 	def generateIndex : Nil
+		root = "/blog/"
 	  index = render "views/index.ecr", "views/layout/layout.ecr"
-	  File.write("build/blog-index.html", index)
+	  File.write("build/index.html", index)
 	end
 
 	def generatePosts : Nil
+		root = "/blog/"
 	  post = {} of String => String
 	  contents = ""
 	  Posts.posts.each do |_post|
@@ -29,6 +32,7 @@ module Static
 	      contents = File.read(_post["file"].as(String))
 	      name = /posts\/(.*)\.md/.match(_post["file"].as(String)).try &.[1]
 	      if name.not_nil!
+
 	        postRender = render "views/post.ecr", "views/layout/layout.ecr"
 	        File.write("build/post/#{name}.html", postRender)
 	      end

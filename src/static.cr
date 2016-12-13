@@ -8,12 +8,16 @@ module Static
 
   if Config.generate || (ARGV.size > 0 && ARGV[0] == "generate")
     puts "Generating..."
+    
     removeOldPosts
     generateIndex
     generatePosts
   end
 
+  Config.set_root "/"
+
   get "/" do
+    root = "/"
     render "views/index.ecr", "views/layout/layout.ecr"
   end
 
