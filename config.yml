@@ -3,3 +3,4 @@ description: A Blog Demonstration
 port: 8000
 auto_gen_startup: true
 disqus_shortname: static-crystal
+logo: logo.png

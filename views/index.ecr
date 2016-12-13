@@ -5,7 +5,7 @@
 <% content_for "body_content" do %>
   <main>
     <header>
-      <img src="assets/logo.png" alt="LOGO">
+      <img src="img/<%= Config.logo %>" alt="LOGO">
       <h1><%= Config.title %> | <small><%= Config.description %></small></h1>
     </header>
     <% Posts.posts.each do |post| %>

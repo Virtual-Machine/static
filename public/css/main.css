@@ -532,6 +532,7 @@ iframe {
 
 main>header>img {
   float: right;
+  height: 40px;
 }
 
 @media (max-width: 666px) {
@@ -540,6 +541,12 @@ main>header>img {
   }
 
   header h1 { font-size: 12px; }
+
+  main>header>img {
+
+    height: 29px;
+    margin-top: -1px;
+  }
 
   article header h2 a { font-size: 16px; }
 
