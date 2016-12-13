@@ -530,6 +530,10 @@ iframe {
   height: 390px;
 }
 
+main>header>img {
+  float: right;
+}
+
 @media (max-width: 666px) {
   main {
     width: 98%;
