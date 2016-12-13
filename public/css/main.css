@@ -535,6 +535,21 @@ main>header>img {
   height: 40px;
 }
 
+main>footer {
+  text-align: right;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid #ccc;
+}
+
+main>footer>a>#static-note {
+  color: #777;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: impact;
+}
+
 @media (max-width: 666px) {
   main {
     width: 98%;
