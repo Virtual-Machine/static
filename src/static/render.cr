@@ -16,7 +16,7 @@ module Static
 
 	def generateIndex : Nil
 	  index = render "views/index.ecr", "views/layout/layout.ecr"
-	  File.write("build/index.html", index)
+	  File.write("build/blog-index.html", index)
 	end
 
 	def generatePosts : Nil
