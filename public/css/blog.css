@@ -550,6 +550,10 @@ main>footer>a>#static-note {
   font-family: impact;
 }
 
+article img {
+  width: 100%;
+}
+
 @media (max-width: 666px) {
   main {
     width: 98%;
