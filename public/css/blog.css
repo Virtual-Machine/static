@@ -559,19 +559,64 @@ article img {
     width: 98%;
   }
 
-  header h1 { font-size: 12px; }
+  main>footer {
+    width: 92.5%;
+    font-size: 7px;
+    white-space: nowrap;
+  }
+
+  #static-note {
+    width: 140px;
+  }
+
+  main>header>a.home-link {
+    line-height: 19px;
+    font-size: 7px;
+    white-space: nowrap;
+    width: 80px;
+  }
+
+  header h1 { font-size: 10px; }
 
   main>header>img {
-
     height: 29px;
     margin-top: -1px;
   }
 
-  article header h2 a { font-size: 16px; }
+  p.post-date {
+    font-size: 7px;
+    line-height: 22px;
+    white-space: nowrap;
+    width: 100px;
+    text-align: right;
+  }
 
-  article header h2  { font-size: 16px; }
+  .back {
+    font-size: 7px;
+    white-space: nowrap;
+    width: 100px;
+    text-align: right;
+  }
 
-  p.abstract { font-size: 10px; }
+  article>p {
+    font-size: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  blockquote {
+    font-size: 10px;
+  }
+
+  pre {
+    font-size: 8px;
+  }
+
+  article header h2 a { font-size: 12px; }
+
+  article header h2  { font-size: 12px; }
+
+  p.abstract { font-size: 8px; }
   
   .gist td.blob-num { font-size: 9px !important; padding: 1px 10px 1px 0px !important }
 
